@@ -43,7 +43,7 @@ No preamble. No markdown. No backticks. Pure JSON only."""
 def generate_schema(intent: dict, design: dict) -> dict:
     payload = {"intent": intent, "design": design}
     response = client.chat.completions.create(
-        model="llama3-70b-8192", max_tokens=4000,
+        model="llama-3.3-70b-versatile", max_tokens=4000,
         messages=[
             {"role": "system", "content": SYSTEM},
             {"role": "user", "content": json.dumps(payload)}
