@@ -1,0 +1,22 @@
+[
+  {"id":1,"type":"normal","prompt":"Build a CRM with login, contacts, dashboard, role-based access for admin and user. Admins see analytics."},
+  {"id":2,"type":"normal","prompt":"E-commerce app with product listings, cart, checkout, payments, and admin panel to manage inventory."},
+  {"id":3,"type":"normal","prompt":"HR tool with employee profiles, leave requests, payroll, and manager approval workflows."},
+  {"id":4,"type":"normal","prompt":"Project management app like Trello with boards, cards, teams, and deadline tracking."},
+  {"id":5,"type":"normal","prompt":"Hospital patient management system with doctor and nurse roles, appointments, and medical records."},
+  {"id":6,"type":"normal","prompt":"Food delivery app with restaurant listings, menus, cart, tracking, and driver role."},
+  {"id":7,"type":"normal","prompt":"Online learning platform with courses, lessons, quizzes, progress tracking, and instructor role."},
+  {"id":8,"type":"normal","prompt":"Job board with company and candidate roles, job postings, applications, and status tracking."},
+  {"id":9,"type":"normal","prompt":"Real estate app with property listings, agent and buyer roles, viewing requests, and saved searches."},
+  {"id":10,"type":"normal","prompt":"Inventory management system with warehouse, product, supplier, and purchase order management."},
+  {"id":11,"type":"edge_vague","prompt":"Build me an app."},
+  {"id":12,"type":"edge_vague","prompt":"I need something for my business."},
+  {"id":13,"type":"edge_conflicting","prompt":"All users are admins but only admins can delete. Everyone has full access but guests are read-only."},
+  {"id":14,"type":"edge_conflicting","prompt":"The app needs no login but also requires user profiles and role-based access control."},
+  {"id":15,"type":"edge_incomplete","prompt":"Add payments to the system."},
+  {"id":16,"type":"edge_incomplete","prompt":"Users should be able to message each other."},
+  {"id":17,"type":"edge_vague","prompt":"Build a social media app."},
+  {"id":18,"type":"edge_conflicting","prompt":"Free plan users get unlimited access. Premium users get premium features. But there are no features that are premium only."},
+  {"id":19,"type":"edge_incomplete","prompt":"Dashboard with charts."},
+  {"id":20,"type":"edge_vague","prompt":"Something like Airbnb but simpler."}
+]
