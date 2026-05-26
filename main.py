@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
-import time
+import time, os
 
 from pipeline.stage1_intent import extract_intent
 from pipeline.stage2_design import design_system
@@ -25,19 +25,14 @@ class PromptRequest(BaseModel):
 async def compile_app(req: PromptRequest):
     start = time.time()
     stages = {}
-
     intent = extract_intent(req.prompt)
     stages["intent"] = intent
-
     design = design_system(intent)
     stages["design"] = design
-
     schema = generate_schema(intent, design)
     stages["schema_raw"] = schema
-
     final_schema, errors = validate_and_repair(schema)
     stages["schema_final"] = final_schema
-
     return {
         "success": len(errors) == 0,
         "stages": stages,
@@ -51,3 +46,8 @@ def health():
     return {"status": "ok"}
 
 app.mount("/", StaticFiles(directory="frontend", html=True), name="frontend")
+
+if __name__ == "__main__":
+    import uvicorn
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run("main:app", host="0.0.0.0", port=port)
