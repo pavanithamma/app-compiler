@@ -40,7 +40,7 @@ No preamble. No markdown. No backticks. Pure JSON only."""
 def repair(schema: dict, errors: list[str]) -> dict:
     payload = {"schema": schema, "errors": errors}
     response = client.chat.completions.create(
-        model="llama-3.1-8b-instant",
+        model="llama3-70b-8192", max_tokens=4000,
         messages=[
             {"role": "system", "content": REPAIR_SYSTEM},
             {"role": "user", "content": json.dumps(payload)}

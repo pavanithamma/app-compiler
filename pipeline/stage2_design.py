@@ -26,7 +26,7 @@ No preamble. No markdown. No backticks. Pure JSON only."""
 
 def design_system(intent: dict) -> dict:
     response = client.chat.completions.create(
-        model="llama-3.1-8b-instant",
+        model="llama3-70b-8192", max_tokens=4000
         messages=[
             {"role": "system", "content": SYSTEM},
             {"role": "user", "content": json.dumps(intent)}
